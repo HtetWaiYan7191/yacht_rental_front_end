@@ -6,12 +6,16 @@
   --primary-color: rgb(143, 205, 9);
 }
 
-/* .bg-primary {
-  background-color: var(--primary-color);
-} */
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  transition: all 0.4s ease;
 }
