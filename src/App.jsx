@@ -3,7 +3,6 @@ import Main from './pages/Main';
 import Detail from './components/Detail/Detail'
 import Reservation from './pages/Reservation';
 import ErrorPage from './pages/ErrorPage';
-import React from 'react';
 import Splash from './pages/Splash';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
