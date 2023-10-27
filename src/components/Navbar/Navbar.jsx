@@ -1,10 +1,47 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import {AiOutlineMenu} from 'react-icons/ai'
+import {RxCross1} from 'react-icons/rx'
+import './Navbar.css'
+import MobileMenuBar from '../MobileMenuBar/MobileMenuBar'
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = (e) => {
+    const newIsOpen = !isOpen;
+    setIsOpen(newIsOpen);
+  };
+  
+
   return (
-    <div>
-      <h1>This is Navbar</h1>
+    <>
+    <div className={`sideNav lg:w-[13%] ${isOpen ? 'w-[50%] transition z-30' : 'w-0'}`}>
+      <ul className='h-[80vh]'>
+        <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Logo</h1></li>
+        <li className=''><NavLink to='/main' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Yachts</NavLink></li>
+        <li className=''><NavLink to='/reserve' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Reserve</NavLink></li>
+        <li className=''><NavLink to='/reservation' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>My Reservations</NavLink></li>
+        <li className=''><NavLink to='/new/yacht' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Add Yacht</NavLink></li>
+        <li className=''><NavLink to='/delete/1/yacht ' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Delet Yacht</NavLink></li>
+      </ul>
+        
+      <div className='nav-footer hidden lg:block'>
+        <ul className="social-links-container flex ms-5 ">
+          <li><i className='fab fa-facebook-f text-gray-700 me-4 text-sm'></i></li>
+          <li><i className='fab fa-google-plus-g text-gray-700 me-4 text-sm'></i></li>
+          <li><i className='fab fa-twitter text-gray-700 me-4 text-sm'></i></li>
+          <li><i className='fab fa-pinterest-p text-gray-700 me-4 text-sm'></i></li>
+          <li><i className='fab fa-vimeo-v text-gray-700 me-4 text-sm'></i></li>
+        </ul>
+        <small className='text-gray-500 text-[10px] ms-5 my-2 block font-bold'>@2015 PIAGGIO $ C.S P.A. PIVA</small>
+      </div>
+
     </div>
+    <nav className={`p-[2rem] nav-container lg:hidden ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
+        <MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>
+    </nav>
+    </>
   )
 }
 
