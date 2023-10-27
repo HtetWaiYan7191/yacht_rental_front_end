@@ -3,9 +3,9 @@ import React from 'react'
 
 const Main = () => {
   return (
-    <div>
-      <h1>This is main page</h1>
-    </div>
+    <>
+      <h1 className='text-red-400'>This is main page</h1>
+    </>
   )
 }
 
