@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { logOut } from '../../redux/authenticationSlice';
 import { useDispatch } from 'react-redux';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { RxCross1 } from 'react-icons/rx';
+// import { AiOutlineMenu } from 'react-icons/ai';
+// import { RxCross1 } from 'react-icons/rx';
 import './Navbar.css';
 import MobileMenuBar from '../MobileMenuBar/MobileMenuBar';
+
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
