@@ -23,7 +23,7 @@ const Navbar = () => {
         <li className=''><NavLink to='/reserve' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Reserve</NavLink></li>
         <li className=''><NavLink to='/reservation' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>My Reservations</NavLink></li>
         <li className=''><NavLink to='/new/yacht' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Add Yacht</NavLink></li>
-        <li className=''><NavLink to='/delete/1/yacht ' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Delet Yacht</NavLink></li>
+        <li className=''><NavLink to='/delete' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Delet Yacht</NavLink></li>
       </ul>
         
       <div className='nav-footer hidden lg:block'>

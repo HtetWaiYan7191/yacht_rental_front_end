@@ -22,7 +22,7 @@ const YachtCard = ({yacht}) => {
 
 YachtCard.propTypes = {
   yacht: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
