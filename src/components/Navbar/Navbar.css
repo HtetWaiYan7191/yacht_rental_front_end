@@ -14,7 +14,6 @@
   .sideNav li {
     text-decoration: none;
     font-size: 25px;
-    color: bla;
     display: block;
     transition: 0.3s;
   }
@@ -27,5 +26,4 @@
   .nav-container {
     transition: all 0.3s ease;
   }
-
 }

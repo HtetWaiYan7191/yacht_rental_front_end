@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import IconLink from '../IconLink/IconLink'
@@ -26,6 +25,7 @@ YachtCard.propTypes = {
     id: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
 };
