@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom'
 import {AiOutlineMenu} from 'react-icons/ai'
 import {RxCross1} from 'react-icons/rx'
 import './Navbar.css'
+import MobileMenuBar from '../MobileMenuBar/MobileMenuBar'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
-    document.body.style.marginLeft = newIsOpen ? '0' : '0px';
   };
   
 
@@ -29,7 +29,7 @@ const Navbar = () => {
 
     </div>
     <nav className={`p-[2rem] nav-container ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
-      <AiOutlineMenu onClick={toggleMenu} className='text-5xl'/>
+        <MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>
     </nav>
     </>
   )

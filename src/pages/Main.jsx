@@ -6,12 +6,10 @@ import YachtCard from "../components/Yacht/YachtCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../styles/Main.css'
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import {Navigation } from 'swiper/modules';
 import IconLink from "../components/IconLink/IconLink";
 
 
@@ -33,34 +31,14 @@ const Main = () => {
         </h2>
 
         <div className="mt-20">
-        <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-        }}
-        pagination={{ el: '.swiper-pagination', clickable: true }}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-          clickable: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container"
-      >
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           {yachts?.map((yacht) => (
             <SwiperSlide className="w-[70%] mx-auto" key={yacht.id}>
             <YachtCard yacht={yacht} key={yacht.id} />
             </SwiperSlide>
           ))}
 
-        <div className="slider-controler">
+        {/* <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </div>
@@ -68,7 +46,7 @@ const Main = () => {
             <ion-icon name="arrow-forward-outline"></ion-icon>
           </div>
           <div className="swiper-pagination"></div>
-        </div>
+        </div> */}
     </Swiper>
 
             <footer className="mt-10">
