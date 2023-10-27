@@ -30,7 +30,7 @@ const Login = () => {
     e.preventDefault();
     dispatch(logIn(newSession)).then((res) => {
       if (res.payload) {
-        navigate('/home');
+        navigate('/main');
       } else {
         setErrorMessage('Email or password is wrong. Please try again.');
         setError(true);

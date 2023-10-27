@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import IconLink from '../IconLink/IconLink'
 const YachtCard = ({yacht}) => {  
   return (
-    <Link className='w-full' to={`/detail/${yacht.id}`}>
+    <Link className='w-full' to={`/details/${yacht.id}`}>
     <div className='yacht-card h-[600px] lg:h-[700px] pb-10 '>
         <figure className='w-full h-[40%] lg:h-[50%]'>
           <img src={yacht.image} alt={yacht.image} className='w-full h-[100%] object-cover rounded-md' />

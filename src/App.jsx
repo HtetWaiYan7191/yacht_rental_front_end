@@ -17,7 +17,7 @@ const App = () => {
       <Route path="/" element={<Splash />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/home" element={<PrivateRoute element={<Main />} />} />
+      <Route path="/main" element={<PrivateRoute element={<Main />} />} />
       <Route path="/details/:id" element={<PrivateRoute element={<Detail />} />} />
       <Route path="/reservation" element={<PrivateRoute element={<Reservation />} />} />
       <Route path="/reserve" element={<PrivateRoute element={<Reserve />} />} />
