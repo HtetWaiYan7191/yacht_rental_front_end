@@ -21,39 +21,30 @@ const Main = () => {
     dispatch(fetchYachts());
   }, [dispatch]);
 
-  console.log(yachts);
   return (
-    <section className="main-section pt-10">
-      <main className="main-container">
-        <h1 className="font-bold text-2xl text-center">Latest Models</h1>
+    <section className="main-section pt-10 flex justify-end ">
+      <main className="main-container w-[100%] lg:w-[80%] h-[115vh]">
+        <h1 className=" font-extrabold text-2xl lg:text-4xl text-center tracking-wider">LATEST MODELS</h1>
         <h2 className="font-semibold  text-gray-500 text-center my-5">
           Please select a Yacht
         </h2>
 
-        <div className="mt-20">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <div className="mt-10">
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper"
+        spaceBetween={16} // Adjust the space between slides
+        slidesPerView={1} // Number of slides to show on initial load
+        breakpoints={{
+          // Define breakpoints for different screen sizes
+          768: {
+            slidesPerView: 3, // Show 3 slides on screens wider than 768px
+          },
+        }}>
           {yachts?.map((yacht) => (
             <SwiperSlide className="w-[70%] mx-auto" key={yacht.id}>
             <YachtCard yacht={yacht} key={yacht.id} />
             </SwiperSlide>
           ))}
-
-        {/* <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div className="swiper-pagination"></div>
-        </div> */}
-    </Swiper>
-
-            <footer className="mt-10">
-                <p className="text-center text-gray-400 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloribus assumenda
-                     mollitia consectetur Veniam, perspiciatis itaque.</p>
-                <IconLink/>
-            </footer>
+       </Swiper>
         </div>
       </main>
     </section>
