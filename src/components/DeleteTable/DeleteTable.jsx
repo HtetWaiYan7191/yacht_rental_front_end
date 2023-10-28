@@ -1,30 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { deleteYacht, fetchYachts } from "../../redux/yachtSlice";
-import { useEffect } from "react";
 import './DeleteTable.css'
-import Loading from "../Loading/Loading";
-import NoData from "../NoData/NoData";
-const DeleteTable = () => {
-    const yachts = useSelector((state) => state.yacht.values);
-    const loading = useSelector((state) => state.yacht.loading);
-    const dispatch = useDispatch();
+import PropTypes from 'prop-types'
 
-    useEffect(() => {
-        dispatch(fetchYachts());
-      }, [dispatch]);
-
-    const handleClick = (id) => {
-        dispatch(deleteYacht(id))
-    }
-    
+const DeleteTable = ({yachts, loading, handleClick}) => {
     return (
-        <>
-        {loading ? (
-          <Loading />
-        ) : (
-          yachts.length < 1 ? (
-            <NoData />
-          ) : (
             <table className="table w-[90%] lg:w-[40%] mx-auto border-2 mt-10">
               <thead>
                 <tr className="border-2 bg-primary/80 text-white">
@@ -46,13 +24,24 @@ const DeleteTable = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          )
-        )}
-      </>
-      
-   
+            </table>    
   )
 }
+
+
+DeleteTable.propTypes = {
+  yachts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+      model: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  loading: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
 
 export default DeleteTable
