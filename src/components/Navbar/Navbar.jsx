@@ -1,18 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu} from 'react-icons/ai'
 import {RxCross1} from 'react-icons/rx'
+import { BiArrowBack } from 'react-icons/bi'
 import './Navbar.css'
 import MobileMenuBar from '../MobileMenuBar/MobileMenuBar'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation();
+const navigate = useNavigate();
+  const currentPath = location.pathname;
 
   const toggleMenu = (e) => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
   };
   
+  const handleGoBack = () => {
+    navigate(-1)
+  }
 
   return (
     <>
@@ -38,8 +45,8 @@ const Navbar = () => {
       </div>
 
     </div>
-    <nav className={`p-[2rem] nav-container lg:hidden ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
-        <MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>
+    <nav className={`p-[1rem] nav-container lg:hidden ${currentPath !== '/main' ? ('shadow-md') : ('')} ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
+        {currentPath !== '/main' ? (<BiArrowBack className='text-2xl' onClick={handleGoBack}/>)  : (<MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>)}
     </nav>
     </>
   )
