@@ -1,7 +1,7 @@
 import './DeleteTable.css'
 import PropTypes from 'prop-types'
 
-const DeleteTable = ({yachts, loading, handleClick}) => {
+const DeleteTable = ({yachts, handleClick}) => {
     return (
             <table className="table w-[90%] lg:w-[40%] mx-auto border-2 mt-10">
               <thead>
