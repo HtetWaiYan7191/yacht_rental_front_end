@@ -1,16 +1,13 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
-import { fetchYachts } from "../redux/yachtSlice";
-import { useDispatch, useSelector } from "react-redux";
-import YachtCard from "../components/Yacht/YachtCard";
+import { useEffect } from 'react';
+import { fetchYachts } from '../redux/yachtSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import YachtCard from '../components/Yacht/YachtCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Loading from "../components/Loading/Loading";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../styles/Main.css'
-
 import {Navigation } from 'swiper/modules';
-import IconLink from "../components/IconLink/IconLink";
 import NoData from "../components/NoData/NoData";
 
 

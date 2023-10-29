@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   values: [],
@@ -12,6 +11,11 @@ const initialState = {
 export const deleteYacht = createAsyncThunk("yacht/delete", async (id) => {  
     const response = await axios.delete(`http://127.0.0.1:3000/yachts/${id}`);
     return response.data.id;
+});
+
+export const postYacht = createAsyncThunk('post/yacht', async (params) => {
+  const response = await axios.post('http://127.0.0.1:3000/yachts', params);
+  return response.data;
 });
 
 export const fetchYachts = createAsyncThunk("Main/yachts", async () => {
