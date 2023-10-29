@@ -36,7 +36,7 @@ const yachtSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchYachts.pending, (state, action) => {
+    builder.addCase(fetchYachts.pending, (state) => {
         state.loading = true;
       });
 
