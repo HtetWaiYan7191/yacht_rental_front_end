@@ -1,4 +1,3 @@
-import './NoData.css'
 import noData from  '../../assets/noData.png'
 const NoData = () => {
   return (
