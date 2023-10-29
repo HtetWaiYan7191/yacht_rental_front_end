@@ -55,6 +55,7 @@ const Login = () => {
             onChange={handleChange}
             placeholder="example@gmail.com"
             className="mb-5 w-full rounded-md p-2 md:mb-8"
+            required
           />
           <input
             type="password"
@@ -63,6 +64,7 @@ const Login = () => {
             onChange={handleChange}
             placeholder="password"
             className="mb-5 w-full rounded-md p-2 md:mb-8"
+            required
           />
           <small className={`${error ? 'mb-5 block text-red-600 md:mb-8' : 'hidden'}`}>
             {errorMessage}
