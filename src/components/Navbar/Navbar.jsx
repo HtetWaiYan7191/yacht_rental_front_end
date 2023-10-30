@@ -59,16 +59,7 @@ const Navbar = () => {
             </button>
           </li>
       </ul>
-        
-      <div className='nav-footer hidden lg:block'>
-        <ul className="social-links-container flex ms-5 ">
-          <li><i className='fab fa-facebook-f text-gray-700 me-4 text-sm'></i></li>
-          <li><i className='fab fa-google-plus-g text-gray-700 me-4 text-sm'></i></li>
-          <li><i className='fab fa-twitter text-gray-700 me-4 text-sm'></i></li>
-          <li><i className='fab fa-pinterest-p text-gray-700 me-4 text-sm'></i></li>
-          <li><i className='fab fa-vimeo-v text-gray-700 me-4 text-sm'></i></li>
-        </ul>
-
+    
         <div className="nav-footer hidden lg:block">
           <ul className="social-links-container ms-5 flex ">
             <li>
@@ -91,12 +82,10 @@ const Navbar = () => {
             @2015 PIAGGIO $ C.S P.A. PIVA
           </small>
         </div>
-      </div>
-      <nav className={`nav-container p-[2rem] lg:hidden ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
-        <MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen} />
-      </nav>
+
+
     </div>
-    <nav className={`p-[1rem] nav-container lg:hidden ${currentPath !== '/main' ? ('shadow-md') : ('')} ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
+    <nav className={`p-[1rem] nav-container lg:hidden ${currentPath !== '/main' ? ('shadow-md bg-primary text-white') : ('')} ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
         {currentPath !== '/main' ? (<BiArrowBack className='text-2xl' onClick={handleGoBack}/>)  : (<MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>)}
     </nav>
     </>
