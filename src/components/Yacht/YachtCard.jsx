@@ -1,7 +1,8 @@
-import {Link} from 'react-router-dom'
+import {Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import IconLink from '../IconLink/IconLink'
 const YachtCard = ({yacht}) => {  
+  
   return (
     <Link className='w-full' to={`/details/${yacht.id}`}>
     <div className='yacht-card h-[600px] lg:h-[700px] pb-10 '>
@@ -22,7 +23,7 @@ const YachtCard = ({yacht}) => {
 
 YachtCard.propTypes = {
   yacht: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
