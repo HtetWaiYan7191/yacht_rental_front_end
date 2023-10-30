@@ -10,7 +10,7 @@ import PrivateRoute from './pages/PrivateRoute';
 import AddYacht from './pages/AddYacht';
 import DeleteYacht from './pages/DeleteYacht';
 import Reserve from './pages/Reserve';
-
+ 
 const App = () => {
   return (
     <Routes>
@@ -22,7 +22,7 @@ const App = () => {
       <Route path="/reservation" element={<PrivateRoute element={<Reservation />} />} />
       <Route path="/reserve" element={<PrivateRoute element={<Reserve />} />} />
       <Route path="/new/yacht" element={<PrivateRoute element={<AddYacht />} />} />
-      <Route path="/delete/:id/yacht" element={<PrivateRoute element={<DeleteYacht />} />} />
+      <Route path="/delete" element={<PrivateRoute element={<DeleteYacht />} />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
