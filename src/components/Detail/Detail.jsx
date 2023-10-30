@@ -116,7 +116,7 @@ const Details = () => {
           </div>
           <div className='yacht-details-button'>
           <Link
-              to={`/reservation`}
+              to={`/reserve`}
             >
               <button>
                 <span style={{ paddingRight: '15px', color: 'white' }}>
