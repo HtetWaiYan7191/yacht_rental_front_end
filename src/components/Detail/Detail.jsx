@@ -1,18 +1,23 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchYachtDetails } from '../../redux/detailsSlice';
 import { Link } from 'react-router-dom';
 import { FaAngleRight, FaSun, FaArrowAltCircleRight } from 'react-icons/fa';
 import multicolor from '../../assets/multicolor.png';
 import './Detail.css';
 
+
 const Details = () => {
+  const navigate = useNavigate();
   const trStyle = {
     textAlign: 'center',
     fontWeight: '400',
     fontStyle: 'italic',
   };
+  const navigateToReservation = () => {
+    navigate('/reserve', {state: yachtDetails})
+  }
 
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -115,8 +120,9 @@ const Details = () => {
             </p>
           </div>
           <div className='yacht-details-button'>
-          <Link
-              to={`/reserve`}
+          <button
+              // to={`/reserve`}
+              onClick={navigateToReservation}
             >
               <button>
                 <span style={{ paddingRight: '15px', color: 'white' }}>
@@ -128,7 +134,7 @@ const Details = () => {
                   <FaArrowAltCircleRight />
                 </span>
               </button>
-            </Link>
+            </button>
           </div>
         </div>
       </div>
