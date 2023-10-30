@@ -1,6 +1,14 @@
 import './Reserve.css';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {fetchCities} from '../../redux/citySlice';
 
 const Reserve = () => {
+  const cities = useSelector((state) => state.city.cities);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCities())
+  }, [dispatch])
 
   return (
     <>
