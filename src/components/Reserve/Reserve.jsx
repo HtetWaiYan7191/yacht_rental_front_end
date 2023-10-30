@@ -8,9 +8,8 @@ const Reserve = () => {
   const cities = useSelector((state) => state.city.cities);
   const yachts = useSelector((state) => state.yacht.values);
   const dispatch = useDispatch();
-  const [selectedOption, setSelectedOption] = useState('');
-  const location = useLocation();
-  console.log(location);
+  const autoSelectedYacht = useLocation().state;
+  console.log(autoSelectedYacht);
 
   const [newReservation, setNewReservation] = useState({
     reservation: {
@@ -63,7 +62,11 @@ const Reserve = () => {
           <select onChange={handleChange} name="yacht_id">
             <option value="">Select a yacht</option>
             {yachts.map((yacht, index) => (
-              <option key={index} value={yacht.id}>
+              <option
+                key={index}
+                value={yacht.id}
+                selected={autoSelectedYacht && autoSelectedYacht.id === yacht.id ? 'selected' : ''}
+              >
                 {yacht.name}
               </option>
             ))}
