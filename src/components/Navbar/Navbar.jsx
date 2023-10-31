@@ -39,8 +39,7 @@ const Navbar = () => {
   }
   return (
     <>
-    {/* <div className={`${token ? 'block' : 'hidden'}`}></div> */}
-    <div className={`sideNav lg:w-[13%] ${isOpen ? 'w-[50%] transition z-30' : 'w-0'}`}>
+    <div className={`sideNav lg:w-[20%] ${isOpen ? 'w-[50%] transition z-30' : 'w-0'}`}>
       <ul className='h-[80vh]'>
         <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Logo</h1></li>
         <li className=''><NavLink to='/main' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Yachts</NavLink></li>

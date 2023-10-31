@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Detail from './components/Detail/Detail'
-import Reservation from './pages/Reservation';
+import Reserve from './components/Reserve/Reserve';
 import ErrorPage from './pages/ErrorPage';
 import Splash from './pages/Splash';
 import Login from './pages/Login';
@@ -9,8 +9,8 @@ import SignUp from './pages/SignUp';
 import PrivateRoute from './pages/PrivateRoute';
 import AddYacht from './pages/AddYacht';
 import DeleteYacht from './pages/DeleteYacht';
-import Reserve from './pages/Reserve';
- 
+import Reservation from './pages/Reservation';
+
 const App = () => {
   return (
     <Routes>

@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import IconLink from '../IconLink/IconLink';
-const YachtCard = ({ yacht }) => {
+import {Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import IconLink from '../IconLink/IconLink'
+const YachtCard = ({yacht}) => {  
+  
   return (
     <Link className="w-full" to={`/details/${yacht.id}`}>
       <div className="yacht-card h-[600px] pb-10 lg:h-[700px] ">

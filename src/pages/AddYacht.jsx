@@ -50,9 +50,9 @@ const AddYacht = () => {
         />
         <form
           onSubmit={handleSubmit}
-          className="absolute flex h-screen w-full flex-col items-center justify-center bg-primary bg-opacity-[85%] px-7"
+          className="absolute flex h-screen w-full flex-col items-center justify-center bg-primary bg-opacity-[50%] px-7"
         >
-          <h1 className="mb-5 text-center text-2xl font-bold text-white lg:mb-7 lg:text-4xl">
+          <h1 className="mb-5 text-center text-2xl font-bold tracking-wider text-white  lg:mb-7 lg:text-4xl">
             Let&apos;s create a Yacht!
           </h1>
           <div className="flex w-full flex-col items-start justify-center md:w-[50%]">
@@ -61,7 +61,7 @@ const AddYacht = () => {
               name="name"
               onChange={handleChange}
               placeholder="Yacht Name"
-              className="mb-5 w-full rounded-md border-2 border-white bg-primary p-2 text-white placeholder:text-white md:mb-7"
+              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
               required
             />
             <input
@@ -69,7 +69,7 @@ const AddYacht = () => {
               name="description"
               onChange={handleChange}
               placeholder="Yacht description"
-              className="mb-5 w-full rounded-md border-2 border-white bg-primary p-2 text-white placeholder:text-white md:mb-7"
+              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
               required
             />
             <input
@@ -77,7 +77,7 @@ const AddYacht = () => {
               name="model"
               onChange={handleChange}
               placeholder="Yacht model"
-              className="mb-5 w-full rounded-md border-2 border-white bg-primary p-2 text-white placeholder:text-white md:mb-7"
+              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
               required
             />
             <input
@@ -85,7 +85,7 @@ const AddYacht = () => {
               name="image"
               onChange={handleChange}
               placeholder="Yacht image url link"
-              className="mb-5 w-full rounded-md border-2 border-white bg-primary p-2 text-white placeholder:text-white md:mb-7"
+              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
               required
             />
             <input
@@ -94,7 +94,7 @@ const AddYacht = () => {
               min="0"
               onChange={handleChange}
               placeholder="Fee per fee_per_day"
-              className="mb-5 w-full rounded-md border-2 border-white bg-primary p-2 text-white placeholder:text-white md:mb-7"
+              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
               required
             />
           </div>
