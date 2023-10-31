@@ -3,26 +3,28 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCities } from '../../redux/citySlice';
 import { useLocation } from 'react-router-dom';
+import { postReservations } from '../../redux/reserveSlice';
 
 const Reserve = () => {
   const cities = useSelector((state) => state.city.cities);
   const yachts = useSelector((state) => state.yacht.values);
-  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.authentication.user_id);
   const autoSelectedYacht = useLocation().state;
-  console.log(autoSelectedYacht);
+  const dispatch = useDispatch();
 
   const [newReservation, setNewReservation] = useState({
     reservation: {
       start_date: '',
       end_date: '',
-      yacht_id: '',
-      user_id: '',
+      yacht_id: autoSelectedYacht.id,
+      user_id: userId,
       city_id: '',
     },
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(e)
     console.log(name,value)
     setNewReservation((prevReservation) => ({
       ...prevReservation,
@@ -33,8 +35,13 @@ const Reserve = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(postReservations(newReservation))
+  }
+
   useEffect(() => {
-    dispatch(fetchCities());
+    dispatch(fetchCities(newReservation));
   }, [dispatch]);
 
   return (
@@ -48,9 +55,9 @@ const Reserve = () => {
             Please fill the form below to reserve the yacht and enjoy, you can reserve the yacht.
           </p>
         </div>
-        <form>
-          <input type="date" placeholder="Start Date" onChange={handleChange} />
-          <input type="date" placeholder="End Date" onChange={handleChange} />
+        <form onSubmit={handleSubmit}>
+          <input type="date" name="start_date" onChange={handleChange} />
+          <input type="date" name="end_date" onChange={handleChange} />
           <select onChange={handleChange} name="city_id">
             <option value="">Select a city</option>
             {cities.map((city, index) => (
@@ -65,7 +72,9 @@ const Reserve = () => {
               <option
                 key={index}
                 value={yacht.id}
-                selected={autoSelectedYacht && autoSelectedYacht.id === yacht.id ? 'selected' : ''}
+                selected={
+                  autoSelectedYacht && autoSelectedYacht.id === yacht.id ? 'defaultValue' : ''
+                }
               >
                 {yacht.name}
               </option>
