@@ -4,8 +4,9 @@ import IconLink from '../IconLink/IconLink'
 const YachtCard = ({yacht}) => {  
   
   return (
-    <Link className="w-full" to={`/details/${yacht.id}`}>
+   
       <div className="yacht-card h-[600px] pb-10 lg:h-[700px] ">
+         <Link className="w-full" to={`/details/${yacht.id}`}>
         <figure className="h-[40%] w-full lg:h-[50%]">
           <img
             src={yacht.image}
@@ -13,6 +14,7 @@ const YachtCard = ({yacht}) => {
             className="h-[100%] w-full rounded-md object-cover"
           />
         </figure>
+        </Link>
         <h2 className="mt-3 text-center text-2xl font-semibold tracking-wider">{yacht.name}</h2>
         <div className="dot-line mx-auto w-[80%] text-center text-lg font-bold text-gray-500 ">
           . . . . . . . . . . . . . .{' '}
@@ -27,7 +29,7 @@ const YachtCard = ({yacht}) => {
           <IconLink />
         </footer>
       </div>
-    </Link>
+   
   );
 };
 

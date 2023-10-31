@@ -26,7 +26,7 @@ const Main = () => {
         <Loading />
       ) : (
         yachts.length < 1 ? <NoData/> : (
-          <section className="main-section pt-10 flex justify-end">
+          <section className="main-section pt-[8rem] flex justify-end">
           <main className="main-container w-[100%] lg:w-[80%] h-[115vh]">
             <h1 className="font-extrabold text-2xl lg:text-4xl text-center tracking-wider">LATEST MODELS</h1>
             <h2 className="font-semibold text-gray-500 text-center my-5">Please select a Yacht</h2>

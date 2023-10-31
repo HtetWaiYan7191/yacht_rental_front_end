@@ -47,10 +47,10 @@ const Details = () => {
 
   return (
     <>
-      <div className="yacht-details-wrapper">
-        <div className="yacht-image">
-          <img src={yachtDetails.image} alt={yachtDetails.name} />
-        </div>
+      <div className="yacht-details-wrapper pt-[8rem]">
+        <figure className="yacht-image mx-auto">
+          <img src={yachtDetails.image} alt={yachtDetails.name} className='object-cover w-full' />
+        </figure>
         <div className="yacht-details">
           <div>
             <h2 style={{ fontWeight: 'bold', paddingTop: '15px' }}>{yachtDetails.name}</h2>
