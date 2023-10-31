@@ -7,7 +7,6 @@ import { FaAngleRight, FaSun, FaArrowAltCircleRight } from 'react-icons/fa';
 import multicolor from '../../assets/multicolor.png';
 import './Detail.css';
 
-
 const Details = () => {
   const navigate = useNavigate();
   const trStyle = {
@@ -16,8 +15,8 @@ const Details = () => {
     fontStyle: 'italic',
   };
   const navigateToReservation = () => {
-    navigate('/reserve', {state: yachtDetails})
-  }
+    navigate('/reserve', { state: yachtDetails });
+  };
 
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -25,13 +24,10 @@ const Details = () => {
   const loading = useSelector((state) => state.details.isLoading);
   const hasErrors = useSelector((state) => state.details.hasErrors);
 
-  
   useEffect(() => {
     console.log(`Fetching yacht details for id: ${id}`);
     dispatch(fetchYachtDetails(id));
   }, [dispatch, id]);
-  
-  
 
   if (hasErrors) {
     return <div>There was an error fetching yacht details.</div>; // Correct error message
@@ -46,20 +42,18 @@ const Details = () => {
     const randomPercentage = Math.floor(Math.random() * 71) + 20;
     return randomPercentage;
   }
-  
-  const apr = annualPercentage();  
+
+  const apr = annualPercentage();
 
   return (
     <>
-      <div className='yacht-details-wrapper'>
-        <div className='yacht-image'>
+      <div className="yacht-details-wrapper">
+        <div className="yacht-image">
           <img src={yachtDetails.image} alt={yachtDetails.name} />
         </div>
-        <div className='yacht-details'>
+        <div className="yacht-details">
           <div>
-            <h2 style={{ fontWeight: 'bold', paddingTop: '15px' }}>
-              {yachtDetails.name}
-            </h2>
+            <h2 style={{ fontWeight: 'bold', paddingTop: '15px' }}>{yachtDetails.name}</h2>
             <p
               style={{
                 padding: '0 0 16px 0',
@@ -71,7 +65,7 @@ const Details = () => {
             </p>
           </div>
 
-          <div className='yacht-details-table'>
+          <div className="yacht-details-table">
             <table>
               <tbody>
                 <tr>
@@ -90,15 +84,12 @@ const Details = () => {
             </table>
 
             <p>
-              <strong style={{ fontSize: '1rem', padding: '0.5rem' }}>
-                {' '}
-                {apr}% APR
-              </strong>
+              <strong style={{ fontSize: '1rem', padding: '0.5rem' }}> {apr}% APR</strong>
               <em>Representative</em>
             </p>
           </div>
 
-          <div className='discover-more'>
+          <div className="discover-more">
             <p
               style={{
                 fontWeight: '600',
@@ -109,31 +100,24 @@ const Details = () => {
               {' '}
               DISCOVER MORE MODELS
               <span>
-              <Link
-              to={`/main`}
-                >
+                <Link to={`/main`}>
                   {' '}
                   <FaAngleRight />{' '}
-                  </Link>
+                </Link>
               </span>
-              <img src={multicolor} alt='multicolor' className='multicolor' />
+              <img src={multicolor} alt="multicolor" className="multicolor" />
             </p>
           </div>
-          <div className='yacht-details-button'>
-          <button
-              // to={`/reserve`}
-              onClick={navigateToReservation}
-            >
-              <button>
-                <span style={{ paddingRight: '15px', color: 'white' }}>
-                  {' '}
-                  <FaSun />{' '}
-                </span>
-                Reserve
-                <span style={{ paddingLeft: '15px' }}>
-                  <FaArrowAltCircleRight />
-                </span>
-              </button>
+          <div className="yacht-details-button">
+            <button onClick={navigateToReservation}>
+              <span style={{ paddingRight: '15px', color: 'white' }}>
+                {' '}
+                <FaSun />{' '}
+              </span>
+              Reserve
+              <span style={{ paddingLeft: '15px' }}>
+                <FaArrowAltCircleRight />
+              </span>
             </button>
           </div>
         </div>
