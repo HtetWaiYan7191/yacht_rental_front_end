@@ -51,6 +51,7 @@ const SignUp = () => {
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             className="mb-5 w-full rounded-md p-2"
+            required
           />
           <input
             type="text"
@@ -58,6 +59,7 @@ const SignUp = () => {
             placeholder="Full Name"
             onChange={(e) => setName(e.target.value)}
             className="mb-5 w-full rounded-md p-2"
+            required
           />
           <input
             type="password"
@@ -65,6 +67,7 @@ const SignUp = () => {
             placeholder="Password (minimum 8 characters)"
             onChange={(e) => setPassword(e.target.value)}
             className="mb-5 w-full rounded-md p-2"
+            required
           />
           <input
             type="password"
@@ -72,6 +75,7 @@ const SignUp = () => {
             placeholder="Type your password again"
             onChange={(e) => setConfirmPassword(e.target.value)}
             className="mb-5 w-full rounded-md p-2"
+            required
           />
           <small className={`${error ? 'mb-4 block text-red-600 lg:mb-6' : 'hidden'}`}>
             {errorMessage}

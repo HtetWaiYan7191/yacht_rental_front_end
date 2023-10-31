@@ -1,17 +1,20 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import {AiOutlineMenu} from 'react-icons/ai'
+import {RxCross1} from 'react-icons/rx'
+import { BiArrowBack } from 'react-icons/bi'
+import './Navbar.css'
+import MobileMenuBar from '../MobileMenuBar/MobileMenuBar'
 import { logOut } from '../../redux/authenticationSlice';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-// import { AiOutlineMenu } from 'react-icons/ai';
-// import { RxCross1 } from 'react-icons/rx';
 import './Navbar.css';
-import MobileMenuBar from '../MobileMenuBar/MobileMenuBar';
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const currentPath = location.pathname;
   const token = sessionStorage.getItem('authToken');
   const pathNames = ['/login', '/signup', '/'];
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +23,10 @@ const Navbar = () => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
   };
+  
+  const handleGoBack = () => {
+    navigate(-1)
+  }
 
   const handleLogout = () => {
     dispatch(logOut(token)).then(() => {
@@ -31,58 +38,16 @@ const Navbar = () => {
     return null;
   }
   return (
-    <div className={`${token ? 'block' : 'hidden'}`}>
-      <div className={`sideNav lg:w-[13%] ${isOpen ? 'z-30 w-[50%] transition' : 'w-0'}`}>
-        <ul className="h-[80vh]">
-          <li className="hidden lg:block">
-            <h1 className="py-4 ps-5 font-bold text-black">Logo</h1>
-          </li>
-          <li className="">
-            <NavLink
-              to="/main"
-              className="block px-4 py-4 text-[18px] font-bold"
-              onClick={toggleMenu}
-            >
-              Yachts
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink
-              to="/reserve"
-              className="block px-4 py-4 text-[18px] font-bold"
-              onClick={toggleMenu}
-            >
-              Reserve
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink
-              to="/reservation"
-              className="block px-4 py-4 text-[18px] font-bold"
-              onClick={toggleMenu}
-            >
-              My Reservations
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink
-              to="/new/yacht"
-              className="block px-4 py-4 text-[18px] font-bold"
-              onClick={toggleMenu}
-            >
-              Add Yacht
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink
-              to="/delete/1/yacht "
-              className="block px-4 py-4 text-[18px] font-bold"
-              onClick={toggleMenu}
-            >
-              Delet Yacht
-            </NavLink>
-          </li>
-          <li>
+    <>
+    <div className={`sideNav lg:w-[20%] ${isOpen ? 'w-[50%] transition z-30' : 'w-0'}`}>
+      <ul className='h-[80vh]'>
+        <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Logo</h1></li>
+        <li className=''><NavLink to='/main' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Yachts</NavLink></li>
+        <li className=''><NavLink to='/reserve' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Reserve</NavLink></li>
+        <li className=''><NavLink to='/reservation' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>My Reservations</NavLink></li>
+        <li className=''><NavLink to='/new/yacht' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Add Yacht</NavLink></li>
+        <li className=''><NavLink to='/delete' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Delet Yacht</NavLink></li>
+        <li>
             <button
               onClick={() => {
                 handleLogout();
@@ -92,8 +57,8 @@ const Navbar = () => {
               Sign Out
             </button>
           </li>
-        </ul>
-
+      </ul>
+    
         <div className="nav-footer hidden lg:block">
           <ul className="social-links-container ms-5 flex ">
             <li>
@@ -116,12 +81,14 @@ const Navbar = () => {
             @2015 PIAGGIO $ C.S P.A. PIVA
           </small>
         </div>
-      </div>
-      <nav className={`nav-container p-[2rem] lg:hidden ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
-        <MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen} />
-      </nav>
+
+
     </div>
-  );
-};
+    <nav className={`p-[1rem] nav-container lg:hidden ${currentPath !== '/main' ? ('shadow-md bg-primary text-white') : ('')} ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
+        {currentPath !== '/main' ? (<BiArrowBack className='text-2xl' onClick={handleGoBack}/>)  : (<MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>)}
+    </nav>
+    </>
+  )
+}
 
 export default Navbar;

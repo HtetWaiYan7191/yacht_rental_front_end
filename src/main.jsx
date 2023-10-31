@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Provider store={store}>
       <Navbar />
-      <App />
+      <App className='ms-[13%]' />
     </Provider>
   </BrowserRouter>,
 );

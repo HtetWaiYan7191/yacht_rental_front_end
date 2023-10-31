@@ -16,11 +16,11 @@ const Reserve = () => {
     reservation: {
       start_date: '',
       end_date: '',
-      yacht_id: autoSelectedYacht.id,
+      yacht_id: autoSelectedYacht ? autoSelectedYacht.id : '',
       user_id: userId,
       city_id: '',
     },
-  });
+  }); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,7 +48,7 @@ const Reserve = () => {
     <>
       <div className="form-container">
         <div className="reservation-title">
-          <h1> Yacht is availbale and ready to be reserved!</h1>
+          <h1 className=' tracking-wider text-3xl'> Yacht is availbale and ready to be reserved!</h1>
           <hr />
           <p style={{ paddingTop: '5px' }}>
             {' '}
@@ -59,7 +59,7 @@ const Reserve = () => {
           <input type="date" name="start_date" onChange={handleChange} />
           <input type="date" name="end_date" onChange={handleChange} />
           <select onChange={handleChange} name="city_id">
-            <option value="">Select a city</option>
+            <option value="" className='px-4' >Select a city</option>
             {cities.map((city, index) => (
               <option key={index} value={city.id}>
                 {city.name}
@@ -67,7 +67,7 @@ const Reserve = () => {
             ))}
           </select>
           <select onChange={handleChange} name="yacht_id">
-            <option value="">Select a yacht</option>
+            <option value="" className='px-4' >Select a yacht</option>
             {yachts.map((yacht, index) => (
               <option
                 key={index}
