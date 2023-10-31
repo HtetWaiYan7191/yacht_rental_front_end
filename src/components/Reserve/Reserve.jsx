@@ -24,8 +24,8 @@ const Reserve = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(e)
-    console.log(name,value)
+    console.log(e);
+    console.log(name, value);
     setNewReservation((prevReservation) => ({
       ...prevReservation,
       reservation: {
@@ -37,12 +37,12 @@ const Reserve = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postReservations(newReservation))
-  }
+    dispatch(postReservations(newReservation));
+  };
 
   useEffect(() => {
     dispatch(fetchCities(newReservation));
-  }, [dispatch]);
+  }, [dispatch, newReservation]);
 
   return (
     <>
