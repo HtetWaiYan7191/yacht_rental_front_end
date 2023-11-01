@@ -2,15 +2,17 @@ import './Reserve.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCities } from '../../redux/citySlice';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { postReservations } from '../../redux/reserveSlice';
 
 const Reserve = () => {
   const cities = useSelector((state) => state.city.cities);
   const yachts = useSelector((state) => state.yacht.values);
-  const userId = useSelector((state) => state.authentication.user_id);
+  const userId = sessionStorage.getItem('current_user');
   const autoSelectedYacht = useLocation().state;
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [newReservation, setNewReservation] = useState({
     reservation: {
@@ -20,12 +22,10 @@ const Reserve = () => {
       user_id: userId,
       city_id: '',
     },
-  }); 
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(e);
-    console.log(name, value);
     setNewReservation((prevReservation) => ({
       ...prevReservation,
       reservation: {
@@ -37,7 +37,13 @@ const Reserve = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postReservations(newReservation));
+    dispatch(postReservations(newReservation)).then((res) => {
+      if (res.payload.status === 200) {
+        navigate('/reservation');
+      } else {
+        setErrorMessage(res.payload.errorMessage);
+      }
+    });
   };
 
   useEffect(() => {
@@ -48,7 +54,10 @@ const Reserve = () => {
     <>
       <div className="form-container">
         <div className="reservation-title">
-          <h1 className=' tracking-wider text-3xl'> Yacht is availbale and ready to be reserved!</h1>
+          <h1 className=" text-3xl tracking-wider">
+            {' '}
+            Yacht is availbale and ready to be reserved!
+          </h1>
           <hr />
           <p style={{ paddingTop: '5px' }}>
             {' '}
@@ -56,30 +65,38 @@ const Reserve = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <input type="date" name="start_date" onChange={handleChange} />
-          <input type="date" name="end_date" onChange={handleChange} />
-          <select onChange={handleChange} name="city_id">
-            <option value="" className='px-4' >Select a city</option>
+          <input type="date" name="start_date" onChange={handleChange} required />
+          <input type="date" name="end_date" onChange={handleChange} required />
+          <select onChange={handleChange} name="city_id" required>
+            <option value="" className="px-4">
+              Select a city
+            </option>
             {cities.map((city, index) => (
               <option key={index} value={city.id}>
                 {city.name}
               </option>
             ))}
           </select>
-          <select onChange={handleChange} name="yacht_id">
-            <option value="" className='px-4' >Select a yacht</option>
+          <select
+            onChange={handleChange}
+            name="yacht_id"
+            required
+            defaultValue={autoSelectedYacht && autoSelectedYacht.id}
+          >
+            <option className="px-4">
+              Select a yacht
+            </option>
             {yachts.map((yacht, index) => (
-              <option
-                key={index}
-                value={yacht.id}
-                selected={
-                  autoSelectedYacht && autoSelectedYacht.id === yacht.id ? 'defaultValue' : ''
-                }
-              >
+              <option key={index} value={yacht.id}>
                 {yacht.name}
               </option>
             ))}
           </select>
+          {errorMessage ? (
+            <small className="font-semibold text-red-600">{errorMessage}</small>
+          ) : (
+            <></>
+          )}
           <button type="submit" className="reserve-button">
             Reserve Now
           </button>
