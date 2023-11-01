@@ -69,18 +69,12 @@ button.reserve-button:hover {
   padding-bottom: 10px;
 }
 
-/* Reserve.css */
-
 /* Style for the labels */
 .form-group label {
-  font-size: 18px; /* Change the font size */
-  color: rgb(44, 66, 9); 
-  font-weight: bold;/* Change the font color */
-  /* Add other label styles as needed */
+  font-size: 18px;
+  color: rgb(44, 66, 9);
+  font-weight: bold;
 }
-
-
-
 
 /* Media Query for Larger Screens */
 @media screen and (min-width: 768px) {

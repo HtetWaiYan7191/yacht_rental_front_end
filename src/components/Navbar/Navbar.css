@@ -1,5 +1,6 @@
 /* styles.css or your custom CSS file */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 @media screen and (min-width: 375px) {
   .sideNav {
     height: 100%;
@@ -21,7 +22,7 @@
   }
 
   .sideNav li h1 {
-    font-family: Pacifico,sans-serif;
+    font-family: Pacifico, sans-serif;
     margin-bottom: 25px;
   }
 

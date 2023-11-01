@@ -20,9 +20,7 @@ const YachtCard = ({ yacht }) => {
       </div>
       <footer className="mt-10">
         <p className="px-2 text-center text-gray-400">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus repellendus aperiam
-          doloribus nemo, veritatis, odit temporibus reprehenderit culpa error illum minus iste
-          eligendi alias explicabo maiores impedit mollitia corrupti praesentium!
+          {yacht.description}
         </p>
         <IconLink />
       </footer>
