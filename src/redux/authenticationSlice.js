@@ -22,7 +22,7 @@ export const signUp = createAsyncThunk('user/signup', async (newUser) => {
 export const logIn = createAsyncThunk('user/login', async (newSession) => {
   const response = await axios.post(`${LOGIN_URL}`, newSession)
   sessionStorage.setItem('authToken', response.headers.authorization);
-  console.log(response);
+  sessionStorage.setItem('current_user', response.data.status.data.user.id);
   return response.data.status;
 });
 
