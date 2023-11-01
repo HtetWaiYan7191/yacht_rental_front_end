@@ -10,7 +10,7 @@ const YachtCard = ({ yacht }) => {
           <img
             src={yacht.image}
             alt={yacht.image}
-            className="h-[100%] w-full rounded-md object-cover border border-transparent transition duration-300 ease-in-out group-hover:border-primary group-hover:border-4"
+            className="h-[100%] w-full rounded-md object-cover border border-transparent transition duration-300 ease-in-out hover:border-primary hover:border-4"
           />
         </figure>
       </Link>
