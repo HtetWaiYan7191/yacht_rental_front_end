@@ -34,6 +34,7 @@
   font-size: 15px;
   font-weight: 500;
   height: 40px;
+  width: 100%;
 }
 
 button.reserve-button {
@@ -50,7 +51,7 @@ button.reserve-button {
 }
 
 button.reserve-button:hover {
-  background-color: #fff;
+  background-color: rgb(123, 156, 5);
   transform: scale(1.05);
 }
 
@@ -67,6 +68,19 @@ button.reserve-button:hover {
   font-weight: 600;
   padding-bottom: 10px;
 }
+
+/* Reserve.css */
+
+/* Style for the labels */
+.form-group label {
+  font-size: 18px; /* Change the font size */
+  color: rgb(44, 66, 9); 
+  font-weight: bold;/* Change the font color */
+  /* Add other label styles as needed */
+}
+
+
+
 
 /* Media Query for Larger Screens */
 @media screen and (min-width: 768px) {
