@@ -19,16 +19,8 @@ export const postYacht = createAsyncThunk('post/yacht', async (params) => {
 });
 
 export const fetchYachts = createAsyncThunk("Main/yachts", async () => {
-  try {
-    const response = await axios.get("https://beta-yacht-rental.onrender.com/yachts/");
-
-    if (response.statusText !== "OK") {
-      throw new Error("Can not fetch data");
-    }
+    const response = await axios.get("https://beta-yacht-rental.onrender.com/yachts");
     return response.data;
-  } catch (error) {
-    throw new Error("Error fetching detail data");
-  }
 });
 
 const yachtSlice = createSlice({
