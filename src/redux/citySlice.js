@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const fetchCities = createAsyncThunk('fetch/cities', async () => {
-    const response = await axios.get('http://127.0.0.1:3000/cities')
+    const response = await axios.get('https://beta-yacht-rental.onrender.com/cities');
     return response.data
 })
 

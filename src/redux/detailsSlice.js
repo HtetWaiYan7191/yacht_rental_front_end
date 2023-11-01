@@ -11,7 +11,7 @@ const initialState = {
 };
 
 
-const url = 'http://127.0.0.1:3000/yachts';
+const url = 'https://beta-yacht-rental.onrender.com/yachts';
 
 export const fetchYachtDetails = createAsyncThunk(
   'details/fetchYachtDetails',

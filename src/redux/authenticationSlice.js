@@ -9,10 +9,10 @@ const initialState = {
   user_id: ''
 };
 
-const LOGIN_URL = 'http://127.0.0.1:3000/login';
-const LOGOUT_URL = 'http://127.0.0.1:3000/logout';
-const SIGNUP_URL = 'http://127.0.0.1:3000/signup';
-const CURRENTUSER_URL = 'http://127.0.0.1:3000/current_user';
+const LOGIN_URL = 'https://beta-yacht-rental.onrender.com/login';
+const LOGOUT_URL = 'https://beta-yacht-rental.onrender.com/logout';
+const SIGNUP_URL = 'https://beta-yacht-rental.onrender.com/signup';
+const CURRENTUSER_URL = 'https://beta-yacht-rental.onrender.com/current_user';
 
 export const signUp = createAsyncThunk('user/signup', async (newUser) => {
   const response = await axios.post(`${SIGNUP_URL}`, newUser);

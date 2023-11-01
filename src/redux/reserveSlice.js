@@ -8,17 +8,17 @@ const initialState = {
 };
 
 export const fetchReservations = createAsyncThunk('fetch/reservations', async () => {
-  const response = await axios.get('http://127.0.0.1:3000/reservations');
+  const response = await axios.get('https://beta-yacht-rental.onrender.com/reservations');
   return response.data;
 });
 
 export const postReservations = createAsyncThunk('post/reservations', async (newReservation) => {
-  const response = await axios.post('http://127.0.0.1:3000/reservations', newReservation);
+  const response = await axios.post('https://beta-yacht-rental.onrender.com/reservations', newReservation);
   return response.data;
 });
 
 export const deleteReservation = createAsyncThunk('delete/reservations', async (id) => {
-  const response = await axios.delete(`http://127.0.0.1:3000/reservations/${id}`);
+  const response = await axios.delete(`https://beta-yacht-rental.onrender.com/reservations/${id}`);
   return response.data.id;
 });
 
