@@ -66,7 +66,7 @@ const Login = () => {
             className="mb-5 w-full rounded-md p-2 md:mb-8"
             required
           />
-          <small className={`${error ? 'mb-5 block text-red-600 md:mb-8' : 'hidden'}`}>
+          <small className={`${error ? 'mb-5 block text-red-600 font-semibold md:mb-8' : 'hidden'}`}>
             {errorMessage}
           </small>
           <span className="mb-5 text-lg text-white md:mb-8">

@@ -77,7 +77,7 @@ const SignUp = () => {
             className="mb-5 w-full rounded-md p-2"
             required
           />
-          <small className={`${error ? 'mb-4 block text-red-600 lg:mb-6' : 'hidden'}`}>
+          <small className={`${error ? 'mb-4 block text-red-600 font-semibold lg:mb-6' : 'hidden'}`}>
             {errorMessage}
           </small>
           <span className="mb-5 text-lg text-white">

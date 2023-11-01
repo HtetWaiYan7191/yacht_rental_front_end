@@ -1,6 +1,6 @@
 .form-container {
   margin: 0 auto;
-  background: linear-gradient(rgba(150, 191, 1, 0.6), rgba(150, 191, 1, 0.5)), url(../../assets/yacht.jpg);
+  background: linear-gradient(rgba(150, 191, 1, 0.8), rgba(150, 191, 1, 0.9)), url(../../assets/yacht.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
