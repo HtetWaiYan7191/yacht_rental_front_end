@@ -25,7 +25,6 @@ const Details = () => {
   const hasErrors = useSelector((state) => state.details.hasErrors);
 
   useEffect(() => {
-    console.log(`Fetching yacht details for id: ${id}`);
     dispatch(fetchYachtDetails(id));
   }, [dispatch, id]);
 

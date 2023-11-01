@@ -13,13 +13,17 @@ export const fetchReservations = createAsyncThunk('fetch/reservations', async ()
 });
 
 export const postReservations = createAsyncThunk('post/reservations', async (newReservation) => {
-  const response = await axios.post('http://127.0.0.1:3000/reservations',newReservation);
-  console.log(response)
+  const response = await axios.post('http://127.0.0.1:3000/reservations', newReservation);
   return response.data;
 });
 
-const citySlice = createSlice({
-  name: 'city',
+export const deleteReservation = createAsyncThunk('delete/reservations', async (id) => {
+  const response = await axios.delete(`http://127.0.0.1:3000/reservations/${id}`);
+  return response.data.id;
+});
+
+const reservationSlice = createSlice({
+  name: 'reservation',
   initialState,
   extraReducers: (builder) => {
     builder.addCase(fetchReservations.pending, (state) => {
@@ -27,9 +31,15 @@ const citySlice = createSlice({
     });
     builder.addCase(fetchReservations.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.cities = action.payload;
+      state.reservations = action.payload;
+    });
+    builder.addCase(deleteReservation.fulfilled, (state, action) => {
+      const newState = state.reservations.filter(
+        (reservation) => reservation.id !== action.payload,
+      );
+      state.reservations = newState;
     });
   },
 });
 
-export default citySlice.reducer;
+export default reservationSlice.reducer;
