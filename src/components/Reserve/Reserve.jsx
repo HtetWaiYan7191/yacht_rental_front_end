@@ -65,38 +65,44 @@ const Reserve = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <input type="date" name="start_date" onChange={handleChange} required />
-          <input type="date" name="end_date" onChange={handleChange} required />
-          <select onChange={handleChange} name="city_id" required>
-            <option value="" className="px-4">
-              Select a city
-            </option>
-            {cities.map((city, index) => (
-              <option key={index} value={city.id}>
-                {city.name}
-              </option>
-            ))}
-          </select>
-          <select
-            onChange={handleChange}
-            name="yacht_id"
-            required
-            defaultValue={autoSelectedYacht && autoSelectedYacht.id}
-          >
-            <option className="px-4">
-              Select a yacht
-            </option>
-            {yachts.map((yacht, index) => (
-              <option key={index} value={yacht.id}>
-                {yacht.name}
-              </option>
-            ))}
-          </select>
+          <div className="form-group">
+            <label htmlFor="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="city_id">Select City:</label>
+            <select id="city_id" onChange={handleChange} name="city_id" required>
+              <option value="" className="px-4">Select a city</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city.id}>
+                  {city.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="yacht_id">Select Yacht:</label>
+            <select id="yacht_id" onChange={handleChange} name="yacht_id" required defaultValue={autoSelectedYacht && autoSelectedYacht.id}>
+              <option value="" className="px-4">Select a yacht</option>
+              {yachts.map((yacht, index) => (
+                <option
+                  key={index}
+                  value={yacht.id}
+                >
+                  {yacht.name}
+                </option>
+              ))}
+            </select>
+          </div>
           {errorMessage ? (
-            <small className="font-semibold text-red-600">{errorMessage}</small>
-          ) : (
-            <></>
-          )}
+                      <small className="font-semibold text-red-600">{errorMessage}</small>
+                    ) : (
+                      <></>
+                    )}
           <button type="submit" className="reserve-button">
             Reserve Now
           </button>

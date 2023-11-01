@@ -39,14 +39,14 @@ const Navbar = () => {
   }
   return (
     <>
-    <div className={`sideNav lg:w-[20%] ${isOpen ? 'w-[50%] transition z-30' : 'w-0'}`}>
+    <div className={`sideNav lg:w-[20%] ${isOpen ? 'w-[100%] z-30' : 'w-0'}`}>
       <ul className='h-[80vh]'>
-        <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Logo</h1></li>
+        <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Yacht Rental</h1></li>
         <li className=''><NavLink to='/main' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Yachts</NavLink></li>
-        <li className=''><NavLink to='/reserve' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Reserve</NavLink></li>
         <li className=''><NavLink to='/reservation' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>My Reservations</NavLink></li>
         <li className=''><NavLink to='/new/yacht' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Add Yacht</NavLink></li>
-        <li className=''><NavLink to='/delete' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Delet Yacht</NavLink></li>
+        <li className=''><NavLink to='/reserve' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Add Reservation</NavLink></li>
+        <li className=''><NavLink to='/delete' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Delete Yacht</NavLink></li>
         <li>
             <button
               onClick={() => {
@@ -84,7 +84,7 @@ const Navbar = () => {
 
 
     </div>
-    <nav className={`p-[1rem] nav-container lg:hidden ${currentPath !== '/main' ? ('shadow-md bg-primary text-white') : ('')} ${isOpen ? 'ms-[60%]' : 'ms-0'}`}>
+    <nav className={`p-[1rem] nav-container lg:hidden ${currentPath !== '/main' ? ('shadow-md bg-primary text-white') : ('')} ${isOpen ? 'ms-[80%]' : 'ms-0'}`}>
         {currentPath !== '/main' ? (<BiArrowBack className='text-2xl' onClick={handleGoBack}/>)  : (<MobileMenuBar toggleMenu={toggleMenu} isOpen={isOpen}/>)}
     </nav>
     </>
