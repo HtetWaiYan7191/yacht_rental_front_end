@@ -37,9 +37,15 @@ const SignUp = () => {
 
   return (
     <>
+    <div className="relative">
+        <img
+          src="https://d2x2jq9y4geyy8.cloudfront.net/default/Galene-Yacht-Charter-big-link-623ae52cbd0b4_v_default_big.jpeg"
+          alt=""
+          className="absolute h-screen w-screen object-fill"
+        />
       <form
         onSubmit={handleSubmit}
-        className="flex h-screen flex-col items-center justify-center bg-orange_bg px-7"
+        className="flex h-screen flex-col items-center justify-center bg-orange_bg px-7 absolute w-full bg-opacity-[85%]"
       >
         <h1 className="mb-4 text-center text-2xl font-bold text-white lg:mb-6 lg:text-4xl">
           Let&apos;s have fun with our yachts !
@@ -95,6 +101,7 @@ const SignUp = () => {
           Sign Up
         </button>
       </form>
+      </div>
     </>
   );
 };
