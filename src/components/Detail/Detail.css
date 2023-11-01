@@ -8,8 +8,10 @@
 }
 
 .yacht-image img {
-  width: 100%;
+  width: 400px;
+  height: 300px;
   background: none;
+  border-radius: 10px;
 }
 
 .yacht-details {
@@ -73,6 +75,7 @@ tbody tr:nth-child(odd) {
     gap: 1rem;
     padding-left: 255px;
     padding-right: 1rem;
+    height: 100vh;
   }
 
   table {
@@ -83,14 +86,21 @@ tbody tr:nth-child(odd) {
     width: 40%;
     align-items: flex-end;
     margin: 0;
+    justify-content: center;
   }
 
   .yacht-details h2 {
     text-align: right;
   }
 
+  .yacht-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .yacht-image img {
-    height: 100vh;
+    height: 50%;
   }
 
   .yacht-details-button button {

@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
     padding-top: 30px;
     background-color: whitesmoke;
   }
@@ -18,7 +18,7 @@
     text-decoration: none;
     font-size: 25px;
     display: block;
-    transition: 0.3s;
+    transition: 0.4s;
   }
 
   .sideNav li h1 {
@@ -32,6 +32,12 @@
   }
 
   .nav-container {
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
   }
 }

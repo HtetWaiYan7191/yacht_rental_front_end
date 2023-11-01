@@ -25,6 +25,7 @@ const YachtCard = ({ yacht }) => {
         <IconLink />
       </footer>
     </div>
+
   );
 };
 
