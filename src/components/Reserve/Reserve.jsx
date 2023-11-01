@@ -56,30 +56,40 @@ const Reserve = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <input type="date" name="start_date" onChange={handleChange} />
-          <input type="date" name="end_date" onChange={handleChange} />
-          <select onChange={handleChange} name="city_id">
-            <option value="" className='px-4' >Select a city</option>
-            {cities.map((city, index) => (
-              <option key={index} value={city.id}>
-                {city.name}
-              </option>
-            ))}
-          </select>
-          <select onChange={handleChange} name="yacht_id">
-            <option value="" className='px-4' >Select a yacht</option>
-            {yachts.map((yacht, index) => (
-              <option
-                key={index}
-                value={yacht.id}
-                selected={
-                  autoSelectedYacht && autoSelectedYacht.id === yacht.id ? 'defaultValue' : ''
-                }
-              >
-                {yacht.name}
-              </option>
-            ))}
-          </select>
+          <div className="form-group">
+            <label htmlFor="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="city_id">Select City:</label>
+            <select id="city_id" onChange={handleChange} name="city_id">
+              <option value="" className="px-4">Select a city</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city.id}>
+                  {city.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="yacht_id">Select Yacht:</label>
+            <select id="yacht_id" onChange={handleChange} name="yacht_id">
+              <option value="" className="px-4">Select a yacht</option>
+              {yachts.map((yacht, index) => (
+                <option
+                  key={index}
+                  value={yacht.id}
+                  selected={autoSelectedYacht && autoSelectedYacht.id === yacht.id ? 'defaultValue' : ''}
+                >
+                  {yacht.name}
+                </option>
+              ))}
+            </select>
+          </div>
           <button type="submit" className="reserve-button">
             Reserve Now
           </button>

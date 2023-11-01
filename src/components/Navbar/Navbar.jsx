@@ -41,7 +41,7 @@ const Navbar = () => {
     <>
     <div className={`sideNav lg:w-[20%] ${isOpen ? 'w-[100%] z-30' : 'w-0'}`}>
       <ul className='h-[80vh]'>
-        <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Logo</h1></li>
+        <li className='hidden lg:block'><h1 className='font-bold text-black ps-5 py-4'>Yacht Rental</h1></li>
         <li className=''><NavLink to='/main' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Yachts</NavLink></li>
         <li className=''><NavLink to='/reservation' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>My Reservations</NavLink></li>
         <li className=''><NavLink to='/new/yacht' className='block px-4 text-[18px] py-4 font-bold' onClick={toggleMenu}>Add Yacht</NavLink></li>

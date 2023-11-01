@@ -61,7 +61,7 @@ const AddYacht = () => {
               name="name"
               onChange={handleChange}
               placeholder="Yacht Name"
-              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
+              className="mb-5 w-full border border-black p-2 rounded-tl-md rounded-br-md"
               required
             />
             <input
@@ -69,7 +69,7 @@ const AddYacht = () => {
               name="description"
               onChange={handleChange}
               placeholder="Yacht description"
-              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
+              className="mb-5 w-full border border-black p-2 rounded-tl-md rounded-br-md"
               required
             />
             <input
@@ -77,7 +77,7 @@ const AddYacht = () => {
               name="model"
               onChange={handleChange}
               placeholder="Yacht model"
-              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
+              className="mb-5 w-full border border-black p-2 rounded-tl-md rounded-br-md"
               required
             />
             <input
@@ -85,7 +85,7 @@ const AddYacht = () => {
               name="image"
               onChange={handleChange}
               placeholder="Yacht image url link"
-              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
+              className="mb-5 w-full border border-black p-2 rounded-tl-md rounded-br-md"
               required
             />
             <input
@@ -93,11 +93,11 @@ const AddYacht = () => {
               name="fee_per_day"
               min="0"
               onChange={handleChange}
-              placeholder="Fee per fee_per_day"
-              className="mb-5 w-full rounded-md border-2 border-white  p-2  placeholder: md:mb-7"
+              placeholder="Fee per day"
+              className="mb-5 w-full border border-black p-2 rounded-tl-md rounded-br-md"
               required
             />
-          </div>
+          </div>          
           {errorMessage ? (
             <small className="mb-4 block text-red-600 lg:mb-6">{errorMessage}</small>
           ) : (
@@ -105,8 +105,8 @@ const AddYacht = () => {
           )}
           <button
             type="submit"
-            className="rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary"
-          >
+            className="rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary hover:bg-yellow-300 hover:text-primary-dark transition duration-300 ease-in-out"
+            >
             Create New Yacht
           </button>
         </form>
