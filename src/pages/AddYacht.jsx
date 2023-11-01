@@ -105,7 +105,7 @@ const AddYacht = () => {
           )}
           <button
             type="submit"
-            className="rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary hover:bg-yellow-300 hover:text-primary-dark transition duration-300 ease-in-out"
+            className="rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary hover:bg-primary hover:text-white hover:text-primary-dark transition duration-300 ease-in-out"
             >
             Create New Yacht
           </button>

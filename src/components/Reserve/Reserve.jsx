@@ -76,7 +76,9 @@ const Reserve = () => {
           <div className="form-group">
             <label htmlFor="city_id">Select City:</label>
             <select id="city_id" onChange={handleChange} name="city_id" required>
-              <option value="" className="px-4">Select a city</option>
+              <option value="" className="px-4">
+                Select a city
+              </option>
               {cities.map((city, index) => (
                 <option key={index} value={city.id}>
                   {city.name}
@@ -86,25 +88,33 @@ const Reserve = () => {
           </div>
           <div className="form-group">
             <label htmlFor="yacht_id">Select Yacht:</label>
-            <select id="yacht_id" onChange={handleChange} name="yacht_id" required defaultValue={autoSelectedYacht && autoSelectedYacht.id}>
-              <option value="" className="px-4">Select a yacht</option>
+            <select
+              id="yacht_id"
+              onChange={handleChange}
+              name="yacht_id"
+              required
+              defaultValue={autoSelectedYacht && autoSelectedYacht.id}
+            >
+              <option value="" className="px-4">
+                Select a yacht
+              </option>
               {yachts.map((yacht, index) => (
-                <option
-                  key={index}
-                  value={yacht.id}
-                >
+                <option key={index} value={yacht.id}>
                   {yacht.name}
                 </option>
               ))}
             </select>
           </div>
           {errorMessage ? (
-                      <small className="font-semibold text-red-600">{errorMessage}</small>
-                    ) : (
-                      <></>
-                    )}
-          <button type="submit" className="reserve-button">
-            Reserve Now
+            <small className="font-semibold text-red-600">{errorMessage}</small>
+          ) : (
+            <></>
+          )}
+          <button
+            type="submit"
+            className="hover:text-primary-dark rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white lg:w-[40%] lg:mx-auto"
+          >
+            Reserve
           </button>
         </form>
       </div>
