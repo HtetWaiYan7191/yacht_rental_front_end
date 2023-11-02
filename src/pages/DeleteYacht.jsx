@@ -20,7 +20,7 @@ const DeleteYacht = () => {
         <NoData />
       ) : (
         <section className="delete-section pt-0 lg:pt-20">
-          <div className="delete-container h-[100vh] pt-[4rem] lg:ms-[20%] lg:flex lg:h-[50vh] lg:flex-col lg:items-center lg:justify-end lg:pt-0">
+          <div className="delete-container h-[100vh] pt-[4rem] lg:ms-[20%] lg:flex lg:h-[50vh] lg:flex-col lg:items-center lg:pt-0">
             <h1 className="mx-auto w-[50%] border-b-4 border-black border-b-primary pb-2 text-center text-2xl font-bold tracking-wider lg:w-[25%]">
               Delete Yachts
             </h1>
