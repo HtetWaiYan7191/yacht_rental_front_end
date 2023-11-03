@@ -15,7 +15,7 @@ const Main = () => {
   const dispatch = useDispatch();
   const yachts = useSelector((state) => state.yacht.values);
   const loading = useSelector((state) => state.yacht.loading);
-
+  
   useEffect(() => {
     dispatch(fetchYachts());
   }, [dispatch]);

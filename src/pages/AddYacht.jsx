@@ -50,7 +50,7 @@ const AddYacht = () => {
         />
         <form
           onSubmit={handleSubmit}
-          className="absolute flex h-screen w-full flex-col items-center justify-center bg-primary bg-opacity-[50%] px-7"
+          className="absolute flex h-screen w-full flex-col items-center justify-center bg-primary bg-opacity-[80%] px-7"
         >
           <h1 className="mb-5 text-center text-2xl font-bold tracking-wider text-white  lg:mb-7 lg:text-4xl">
             Let&apos;s create a Yacht!
@@ -99,13 +99,13 @@ const AddYacht = () => {
             />
           </div>          
           {errorMessage ? (
-            <small className="mb-4 block text-red-600 lg:mb-6">{errorMessage}</small>
+            <small className="mb-4 block text-red-600 font-semibold lg:mb-6">{errorMessage}</small>
           ) : (
             <></>
           )}
           <button
             type="submit"
-            className="rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary hover:bg-yellow-300 hover:text-primary-dark transition duration-300 ease-in-out"
+            className="rounded-full bg-white p-2 px-10 text-lg font-semibold text-primary hover:bg-primary hover:text-white hover:text-primary-dark transition duration-300 ease-in-out"
             >
             Create New Yacht
           </button>

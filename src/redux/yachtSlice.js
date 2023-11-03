@@ -9,26 +9,18 @@ const initialState = {
 };
 
 export const deleteYacht = createAsyncThunk("yacht/delete", async (id) => {  
-    const response = await axios.delete(`http://127.0.0.1:3000/yachts/${id}`);
+    const response = await axios.delete(`https://beta-yacht-rental.onrender.com/yachts/${id}`);
     return response.data.id;
 });
 
 export const postYacht = createAsyncThunk('post/yacht', async (params) => {
-  const response = await axios.post('http://127.0.0.1:3000/yachts', params);
+  const response = await axios.post('https://beta-yacht-rental.onrender.com/yachts', params);
   return response.data;
 });
 
 export const fetchYachts = createAsyncThunk("Main/yachts", async () => {
-  try {
-    const response = await axios.get("http://127.0.0.1:3000/yachts/");
-
-    if (response.statusText !== "OK") {
-      throw new Error("Can not fetch data");
-    }
+    const response = await axios.get("https://beta-yacht-rental.onrender.com/yachts");
     return response.data;
-  } catch (error) {
-    throw new Error("Error fetching detail data");
-  }
 });
 
 const yachtSlice = createSlice({
