@@ -37,7 +37,7 @@ const Details = () => {
     return <div>Loading...</div>; // Show loading message while fetching data
   }
 
-  function annualPercentage() {
+  const annualPercentage = () => {
     // Generate a random number between 20 and 90
     const randomPercentage = Math.floor(Math.random() * 71) + 20;
     return randomPercentage;

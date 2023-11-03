@@ -17,7 +17,6 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
   - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
@@ -129,14 +128,6 @@ To run the project, execute the following command:
 
 ```sh
   npm run dev or yarn run dev
-```
-
-### Run tests
-
-To run tests, run the following command:
-
-```sh
-  npm test
 ```
 
 ### Deployment
