@@ -77,7 +77,7 @@ tbody tr:nth-child(odd) {
   .yacht-details-wrapper {
     flex-direction: row;
     gap: 1rem;
-    padding-left: 350px;
+    padding-left: 25%;
     padding-right: 1rem;
     height: 100vh;
   }
@@ -87,7 +87,7 @@ tbody tr:nth-child(odd) {
   }
 
   .yacht-details {
-    width: 70%;
+    width: 50%;
     align-items: flex-end;
     margin: 0;
     justify-content: center;
