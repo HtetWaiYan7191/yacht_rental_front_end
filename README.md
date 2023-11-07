@@ -81,8 +81,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- <a href="#">Yacht Rental Live</a>
-- <a href="#">Yacht Rental Backend API</a>
+- <a href="https://beta-yacht-rental.netlify.app/">Yacht Rental Live</a>
+- <a href="https://beta-yacht-rental.onrender.com/api-docs/index.html">API Documentation</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
