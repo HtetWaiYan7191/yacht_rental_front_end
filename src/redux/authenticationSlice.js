@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  isLoading: true,
+  isLoading: false,
   isAuthenticated: false,
   authToken: '',
   response: {},
@@ -49,12 +49,22 @@ const authenticationSlice = createSlice({
   name: 'authentication',
   initialState,
   extraReducers: (builder) => {
+    builder.addCase(signUp.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }));
     builder.addCase(signUp.fulfilled, (state, action) => ({
       ...state,
+      isLoading: false,
       response: action.payload,
+    }));
+    builder.addCase(logIn.pending, (state) => ({
+      ...state,
+      isLoading: true,
     }));
     builder.addCase(logIn.fulfilled, (state, action) => ({
       ...state,
+      isLoading: false,
       isAuthenticated: true,
       authToken: action.payload,
       user_id: action.payload.data.user.id
