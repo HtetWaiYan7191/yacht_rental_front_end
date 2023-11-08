@@ -58,6 +58,11 @@ const authenticationSlice = createSlice({
       isLoading: false,
       response: action.payload,
     }));
+    builder.addCase(signUp.rejected, (state, action) => ({
+      ...state,
+      isLoading: false,
+      response: action.payload,
+    }));
     builder.addCase(logIn.pending, (state) => ({
       ...state,
       isLoading: true,
@@ -68,6 +73,12 @@ const authenticationSlice = createSlice({
       isAuthenticated: true,
       authToken: action.payload,
       user_id: action.payload.data.user.id
+    }));
+    builder.addCase(logIn.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+      isAuthenticated: false,
+      authToken: '',
     }));
   },
 });
