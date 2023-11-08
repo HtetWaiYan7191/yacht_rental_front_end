@@ -1,0 +1,43 @@
+/* styles.css or your custom CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@media screen and (min-width: 375px) {
+  .sideNav {
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 30px;
+    background-color: whitesmoke;
+  }
+
+  .sideNav li {
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.4s;
+  }
+
+  .sideNav li h1 {
+    font-family: Pacifico, sans-serif;
+    margin-bottom: 25px;
+  }
+
+  .active {
+    background-color: var(--primary-color);
+    color: whitesmoke;
+  }
+
+  .nav-container {
+    transition: all 0.4s ease;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+}
