@@ -45,46 +45,46 @@ const Navbar = () => {
           <li className="hidden lg:block">
             <h1 className="py-4 ps-5 font-bold text-black">Yacht Rental</h1>
           </li>
-          <li className="">
+          <li>
             <NavLink
               to="/main"
-              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200"
+              className="block px-4 py-4 text-[18px] font-bold transition-all duration-200 ease-in-out hover:bg-primary/80"
               onClick={toggleMenu}
             >
               Yachts
             </NavLink>
           </li>
-          <li className="">
+          <li>
             <NavLink
               to="/reservation"
-              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200"
+              className="block px-4 py-4 text-[18px] font-bold transition-all duration-200 ease-in-out hover:bg-primary/80"
               onClick={toggleMenu}
             >
               My Reservations
             </NavLink>
           </li>
-          <li className="">
+          <li>
             <NavLink
               to="/new/yacht"
-              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200"
+              className="block px-4 py-4 text-[18px] font-bold transition-all duration-200 ease-in-out hover:bg-primary/80"
               onClick={toggleMenu}
             >
               Add Yacht
             </NavLink>
           </li>
-          <li className="">
+          <li>
             <NavLink
               to="/reserve"
-              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200"
+              className="block px-4 py-4 text-[18px] font-bold transition-all duration-200 ease-in-out hover:bg-primary/80"
               onClick={toggleMenu}
             >
               Add Reservation
             </NavLink>
           </li>
-          <li className="">
+          <li>
             <NavLink
               to="/delete"
-              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200"
+              className="block px-4 py-4 text-[18px] font-bold transition-all duration-200 ease-in-out hover:bg-primary/80"
               onClick={toggleMenu}
             >
               Delete Yacht
@@ -95,7 +95,7 @@ const Navbar = () => {
               onClick={() => {
                 handleLogout();
               }}
-              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200"
+              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200 cursor-pointer"
             >
               Sign Out
             </a>

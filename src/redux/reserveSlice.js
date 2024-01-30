@@ -8,17 +8,17 @@ const initialState = {
 };
 
 export const fetchReservations = createAsyncThunk('fetch/reservations', async () => {
-  const response = await axios.get('https://beta-yacht-rental.onrender.com/reservations');
+  const response = await axios.get('https://yacht-rental-b1c14a12245e.herokuapp.com/reservations');
   return response.data;
 });
 
 export const postReservations = createAsyncThunk('post/reservations', async (newReservation) => {
-  const response = await axios.post('https://beta-yacht-rental.onrender.com/reservations', newReservation);
+  const response = await axios.post('https://yacht-rental-b1c14a12245e.herokuapp.com/reservations', newReservation);
   return response.data;
 });
 
 export const deleteReservation = createAsyncThunk('delete/reservations', async (id) => {
-  const response = await axios.delete(`https://beta-yacht-rental.onrender.com/reservations/${id}`);
+  const response = await axios.delete(`https://yacht-rental-b1c14a12245e.herokuapp.com/reservations/${id}`);
   return response.data.id;
 });
 

@@ -2,17 +2,17 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  isLoading: true,
+  isLoading: false,
   isAuthenticated: false,
   authToken: '',
   response: {},
   user_id: ''
 };
 
-const LOGIN_URL = 'https://beta-yacht-rental.onrender.com/login';
-const LOGOUT_URL = 'https://beta-yacht-rental.onrender.com/logout';
-const SIGNUP_URL = 'https://beta-yacht-rental.onrender.com/signup';
-const CURRENTUSER_URL = 'https://beta-yacht-rental.onrender.com/current_user';
+const LOGIN_URL = 'https://yacht-rental-b1c14a12245e.herokuapp.com/login';
+const LOGOUT_URL = 'https://yacht-rental-b1c14a12245e.herokuapp.com/logout';
+const SIGNUP_URL = 'https://yacht-rental-b1c14a12245e.herokuapp.com/signup';
+const CURRENTUSER_URL = 'https://yacht-rental-b1c14a12245e.herokuapp.com/current_user';
 
 export const signUp = createAsyncThunk('user/signup', async (newUser) => {
   const response = await axios.post(`${SIGNUP_URL}`, newUser);
@@ -49,15 +49,36 @@ const authenticationSlice = createSlice({
   name: 'authentication',
   initialState,
   extraReducers: (builder) => {
+    builder.addCase(signUp.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }));
     builder.addCase(signUp.fulfilled, (state, action) => ({
       ...state,
+      isLoading: false,
       response: action.payload,
+    }));
+    builder.addCase(signUp.rejected, (state, action) => ({
+      ...state,
+      isLoading: false,
+      response: action.payload,
+    }));
+    builder.addCase(logIn.pending, (state) => ({
+      ...state,
+      isLoading: true,
     }));
     builder.addCase(logIn.fulfilled, (state, action) => ({
       ...state,
+      isLoading: false,
       isAuthenticated: true,
       authToken: action.payload,
       user_id: action.payload.data.user.id
+    }));
+    builder.addCase(logIn.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+      isAuthenticated: false,
+      authToken: '',
     }));
   },
 });

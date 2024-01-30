@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const fetchCities = createAsyncThunk('fetch/cities', async () => {
-    const response = await axios.get('https://beta-yacht-rental.onrender.com/cities');
+    const response = await axios.get('https://yacht-rental-b1c14a12245e.herokuapp.com/cities');
     return response.data
 })
 
