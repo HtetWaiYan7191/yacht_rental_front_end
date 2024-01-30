@@ -11,7 +11,7 @@ const initialState = {
 };
 
 
-const url = 'https://beta-yacht-rental.onrender.com/yachts';
+const url = 'https://yacht-rental-b1c14a12245e.herokuapp.com/yachts';
 
 export const fetchYachtDetails = createAsyncThunk(
   'details/fetchYachtDetails',

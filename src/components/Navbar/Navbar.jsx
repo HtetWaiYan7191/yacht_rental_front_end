@@ -95,7 +95,7 @@ const Navbar = () => {
               onClick={() => {
                 handleLogout();
               }}
-              className="block cursor-pointer px-4 py-4 text-[18px] font-bold transition-all duration-200 ease-in-out hover:bg-primary/80"
+              className="block px-4 py-4 text-[18px] font-bold hover:bg-primary/80 transition-all ease-in-out duration-200 cursor-pointer"
             >
               Sign Out
             </a>
